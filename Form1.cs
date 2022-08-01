@@ -221,10 +221,10 @@ namespace ProyectoFinal
                 MessageBox.Show("Seleccione un campo de la tabla de Artistas", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            vinfechaInicio = dtpFechaInicio.Value.ToShortDateString();
+            vinfechaInicio = dtpFechaInicio.Value.ToString("dd/MM/yyyy");
             if (chkFechaFin.Checked)
             {
-                vinFechaFin = dtpFechaFin.Value.ToShortDateString();
+                vinFechaFin = dtpFechaFin.Value.ToString("dd/MM/yyyy");
             }
             try
             {
@@ -254,7 +254,15 @@ namespace ProyectoFinal
         private void btnConsultaPorFechaVinculacion1_Click(object sender, EventArgs e)
         {
             DataSet resVinculacion = new DataSet();
-            resVinculacion = vincula.consultarVinculacionesPorFechaInicio(dtpConsFechaInicioVinculacion.Value.ToShortDateString());
+            try
+            {
+                resVinculacion = vincula.consultarVinculacionesPorFechaInicio(dtpConsFechaInicioVinculacion.Value.ToString("dd/MM/yyyy"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             dgvSeleccionVinculacion.DataSource = resVinculacion;
             dgvSeleccionVinculacion.DataMember = "ResultadoDatos";
         }

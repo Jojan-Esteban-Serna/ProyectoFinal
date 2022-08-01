@@ -40,6 +40,9 @@ namespace ProyectoFinal
             this.lblMensajeConsultas = new System.Windows.Forms.Label();
             this.tpRegistroVinculacion = new System.Windows.Forms.TabPage();
             this.pnlVinculacion = new System.Windows.Forms.Panel();
+            this.chkFechaFin = new System.Windows.Forms.CheckBox();
+            this.lblTituloDgvArtistas = new System.Windows.Forms.Label();
+            this.labelTituloDgvAsociaciones = new System.Windows.Forms.Label();
             this.lblCodigoArtistaVincular = new System.Windows.Forms.Label();
             this.lblNitAsociacionVincular = new System.Windows.Forms.Label();
             this.lblCodigoArtistaSeleccionado = new System.Windows.Forms.Label();
@@ -79,9 +82,6 @@ namespace ProyectoFinal
             this.lblNit = new System.Windows.Forms.Label();
             this.lblMensajeAsociacion = new System.Windows.Forms.Label();
             this.tbcGestion = new System.Windows.Forms.TabControl();
-            this.labelTituloDgvAsociaciones = new System.Windows.Forms.Label();
-            this.lblTituloDgvArtistas = new System.Windows.Forms.Label();
-            this.chkFechaFin = new System.Windows.Forms.CheckBox();
             this.tpConsultas.SuspendLayout();
             this.pnlConsultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionVinculacion)).BeginInit();
@@ -243,6 +243,42 @@ namespace ProyectoFinal
             this.pnlVinculacion.Size = new System.Drawing.Size(999, 510);
             this.pnlVinculacion.TabIndex = 0;
             // 
+            // chkFechaFin
+            // 
+            this.chkFechaFin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkFechaFin.AutoSize = true;
+            this.chkFechaFin.Font = new System.Drawing.Font("Poppins", 9.75F);
+            this.chkFechaFin.Location = new System.Drawing.Point(387, 469);
+            this.chkFechaFin.Name = "chkFechaFin";
+            this.chkFechaFin.Size = new System.Drawing.Size(87, 27);
+            this.chkFechaFin.TabIndex = 22;
+            this.chkFechaFin.Text = "Fecha fin";
+            this.chkFechaFin.UseVisualStyleBackColor = true;
+            // 
+            // lblTituloDgvArtistas
+            // 
+            this.lblTituloDgvArtistas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTituloDgvArtistas.AutoSize = true;
+            this.lblTituloDgvArtistas.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloDgvArtistas.Location = new System.Drawing.Point(709, 170);
+            this.lblTituloDgvArtistas.Name = "lblTituloDgvArtistas";
+            this.lblTituloDgvArtistas.Size = new System.Drawing.Size(60, 23);
+            this.lblTituloDgvArtistas.TabIndex = 21;
+            this.lblTituloDgvArtistas.Text = "Artistas";
+            this.lblTituloDgvArtistas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelTituloDgvAsociaciones
+            // 
+            this.labelTituloDgvAsociaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTituloDgvAsociaciones.AutoSize = true;
+            this.labelTituloDgvAsociaciones.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloDgvAsociaciones.Location = new System.Drawing.Point(227, 170);
+            this.labelTituloDgvAsociaciones.Name = "labelTituloDgvAsociaciones";
+            this.labelTituloDgvAsociaciones.Size = new System.Drawing.Size(96, 23);
+            this.labelTituloDgvAsociaciones.TabIndex = 20;
+            this.labelTituloDgvAsociaciones.Text = "Asociaciones";
+            this.labelTituloDgvAsociaciones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblCodigoArtistaVincular
             // 
             this.lblCodigoArtistaVincular.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -335,7 +371,7 @@ namespace ProyectoFinal
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(90, 20);
             this.dtpFechaInicio.TabIndex = 10;
-            this.dtpFechaInicio.Value = new System.DateTime(2022, 7, 31, 14, 53, 16, 0);
+            this.dtpFechaInicio.Value = new System.DateTime(2022, 8, 1, 0, 0, 0, 0);
             // 
             // dgvSeleccionArtista
             // 
@@ -697,42 +733,6 @@ namespace ProyectoFinal
             this.tbcGestion.SelectedIndex = 0;
             this.tbcGestion.Size = new System.Drawing.Size(1007, 536);
             this.tbcGestion.TabIndex = 0;
-            // 
-            // labelTituloDgvAsociaciones
-            // 
-            this.labelTituloDgvAsociaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTituloDgvAsociaciones.AutoSize = true;
-            this.labelTituloDgvAsociaciones.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloDgvAsociaciones.Location = new System.Drawing.Point(227, 170);
-            this.labelTituloDgvAsociaciones.Name = "labelTituloDgvAsociaciones";
-            this.labelTituloDgvAsociaciones.Size = new System.Drawing.Size(96, 23);
-            this.labelTituloDgvAsociaciones.TabIndex = 20;
-            this.labelTituloDgvAsociaciones.Text = "Asociaciones";
-            this.labelTituloDgvAsociaciones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTituloDgvArtistas
-            // 
-            this.lblTituloDgvArtistas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTituloDgvArtistas.AutoSize = true;
-            this.lblTituloDgvArtistas.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloDgvArtistas.Location = new System.Drawing.Point(709, 170);
-            this.lblTituloDgvArtistas.Name = "lblTituloDgvArtistas";
-            this.lblTituloDgvArtistas.Size = new System.Drawing.Size(60, 23);
-            this.lblTituloDgvArtistas.TabIndex = 21;
-            this.lblTituloDgvArtistas.Text = "Artistas";
-            this.lblTituloDgvArtistas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chkFechaFin
-            // 
-            this.chkFechaFin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkFechaFin.AutoSize = true;
-            this.chkFechaFin.Font = new System.Drawing.Font("Poppins", 9.75F);
-            this.chkFechaFin.Location = new System.Drawing.Point(387, 469);
-            this.chkFechaFin.Name = "chkFechaFin";
-            this.chkFechaFin.Size = new System.Drawing.Size(87, 27);
-            this.chkFechaFin.TabIndex = 22;
-            this.chkFechaFin.Text = "Fecha fin";
-            this.chkFechaFin.UseVisualStyleBackColor = true;
             // 
             // frmArtistas
             // 
