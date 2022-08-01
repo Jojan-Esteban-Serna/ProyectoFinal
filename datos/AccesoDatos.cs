@@ -1,20 +1,15 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoFinal.datos
 {
-    class AccesoDatos
+    internal class AccesoDatos
     {
         //Paso 0:agregar las referencias dll para que el codigo en c# me reconozca el
         //codigo de oracle.
 
         //Paso 1: creo la cadena de conexion
-        string cadenaConexion = "DATA SOURCE=localhost; USER ID=BASES1; Password = oracle";
+        private string cadenaConexion = "DATA SOURCE=localhost; USER ID=BASES1; Password = oracle";
 
         //paso 2: crear el metodo que ejecuta una instruccion DML
         //insert delete update
@@ -29,13 +24,14 @@ namespace ProyectoFinal.datos
             //paso 3: abrir la conexion
             miConexion.Open();
             /*paso 4: ejecutar el comando. Al ejecutar un objeto de tipo comando
-             * este devuelve un valor entero que me indica las filas que se 
+             * este devuelve un valor entero que me indica las filas que se
              * afectaron en la operacion DML(insert, update,delete). */
             filasAfectadas = miComando.ExecuteNonQuery();
             //paso 5: cierro la conexion
             miConexion.Close();
             return filasAfectadas;
         }
+
         public DataSet ejecutarSELECT(string consulta)
         {
             //paso 1: crear un dataset vacio
@@ -47,6 +43,5 @@ namespace ProyectoFinal.datos
             //paso 4: retorno el dataset lleno
             return ds;
         }
-
     }
 }

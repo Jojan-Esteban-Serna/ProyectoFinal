@@ -1,28 +1,26 @@
 ﻿using ProyectoFinal.datos;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoFinal.logica
 {
-    class Artista
+    internal class Artista
     {
         //creo un obj de la clase AccesoDatos
-        AccesoDatos dt = new AccesoDatos();
-        public int registrarArtista(int artCodigo, string artTipoArte, string artNombreArtistico,int artAnioNacimiento )
+        private AccesoDatos dt = new AccesoDatos();
+
+        public int registrarArtista(int artCodigo, string artTipoArte, string artNombreArtistico, int artAnioNacimiento)
         {
             int resultado;
             /*paso 1: construir la sentencia insert*/
             string consulta;
             consulta = String.Format("INSERT INTO Artista (artCodigo,artTipoArte,artNombreArtistico,artAnioNacimiento) VALUES ({0},'{1}', '{2}',{3})",
-                                      artCodigo,artTipoArte,artNombreArtistico,artAnioNacimiento);
+                                      artCodigo, artTipoArte, artNombreArtistico, artAnioNacimiento);
             /*paso 2: enviar la consulta a la capa de datos para ejecutarla*/
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+
         public DataSet consultarArtistas()
         {
             DataSet mids = new DataSet();

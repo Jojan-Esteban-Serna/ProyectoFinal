@@ -1,25 +1,21 @@
 ﻿using ProyectoFinal.logica;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace ProyectoFinal
 {
     public partial class frmArtistas : Form
     {
-
         public frmArtistas()
         {
             InitializeComponent();
         }
-        AsociacionArtistas asoArtistas = new AsociacionArtistas();
-        Artista artista = new Artista();
-        Vincula vincula = new Vincula();
+
+        private AsociacionArtistas asoArtistas = new AsociacionArtistas();
+        private Artista artista = new Artista();
+        private Vincula vincula = new Vincula();
+
         private void tpRegistroVinculacion_Enter(object sender, EventArgs e)
         {
             DataSet resAsociacion = new DataSet();
@@ -37,7 +33,7 @@ namespace ProyectoFinal
         private void txtNit_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if(!char.IsDigit(ch) && ch != 8)
+            if (!char.IsDigit(ch) && ch != 8)
             {
                 e.Handled = true;
             }
@@ -56,11 +52,10 @@ namespace ProyectoFinal
             string asoArtModalidad = "";
 
             // verificar espacio vacio
-            if(txtNit.Text.Length > 0)
+            if (txtNit.Text.Length > 0)
             {
                 try
                 {
-
                     asoArtNit = int.Parse(txtNit.Text);
                 }
                 catch (Exception ex)
@@ -95,7 +90,6 @@ namespace ProyectoFinal
             {
                 MessageBox.Show("Ingrese el Nombre", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-
             }
             //realizar el registro
             try
@@ -104,7 +98,7 @@ namespace ProyectoFinal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: "+ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -121,13 +115,13 @@ namespace ProyectoFinal
         private void btnRegistrarArtista_Click(object sender, EventArgs e)
         {
             int resultado = 0;
-            int artCodigo= 0;
+            int artCodigo = 0;
             string artTipoArte = "";
             string artNombreArtistico = "";
             int artAnioNacimiento;
 
             //verificar espacio vacio
-            if(txtCodigo.Text.Length> 0)
+            if (txtCodigo.Text.Length > 0)
             {
                 try
                 {
@@ -148,7 +142,7 @@ namespace ProyectoFinal
             //obtener item seleccionado
             artTipoArte = cbxTipoArte.SelectedItem.ToString();
             //verificar espacio vacio
-            if(txtNombreArtistico.Text.Length> 0)
+            if (txtNombreArtistico.Text.Length > 0)
             {
                 artNombreArtistico = txtNombreArtistico.Text;
             }
@@ -162,7 +156,7 @@ namespace ProyectoFinal
 
             try
             {
-                resultado = artista.registrarArtista(artCodigo,artTipoArte,artNombreArtistico,artAnioNacimiento);
+                resultado = artista.registrarArtista(artCodigo, artTipoArte, artNombreArtistico, artAnioNacimiento);
             }
             catch (Exception ex)
             {
@@ -183,18 +177,17 @@ namespace ProyectoFinal
         private void btnRegistrarVinculacion_Click(object sender, EventArgs e)
         {
             int resultado = 0;
-            int vinId=0;
+            int vinId = 0;
             int asoArtNit;
             int artCodigo;
-            string vinfechaInicio="";
-            string vinFechaFin="";
+            string vinfechaInicio = "";
+            string vinFechaFin = "";
             // Verificar espacio vacion
             if (txtId.Text.Length > 0)
             {
                 try
                 {
                     vinId = int.Parse(txtId.Text);
-
                 }
                 catch (Exception ex)
                 {
@@ -235,7 +228,7 @@ namespace ProyectoFinal
             }
             try
             {
-                resultado = vincula.registrarVinculacion(vinId,asoArtNit,artCodigo,vinfechaInicio,vinFechaFin);
+                resultado = vincula.registrarVinculacion(vinId, asoArtNit, artCodigo, vinfechaInicio, vinFechaFin);
             }
             catch (Exception ex)
             {
@@ -255,7 +248,7 @@ namespace ProyectoFinal
 
         private void btnNumPintores_Click(object sender, EventArgs e)
         {
-            lblNumeroPintores.Text = "Numero de pintores: "+artista.consultarCantidadPor("artTipoArte", "'pintura'");
+            lblNumeroPintores.Text = "Numero de pintores: " + artista.consultarCantidadPor("artTipoArte", "'pintura'");
         }
 
         private void btnConsultaPorFechaVinculacion1_Click(object sender, EventArgs e)
@@ -265,10 +258,6 @@ namespace ProyectoFinal
             dgvSeleccionVinculacion.DataSource = resVinculacion;
             dgvSeleccionVinculacion.DataMember = "ResultadoDatos";
         }
-
-
-
-
 
         private void dgvSeleccionAsociacion_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -293,7 +282,5 @@ namespace ProyectoFinal
             lblNitAsociacionSeleccionada.Text = "----";
             lblCodigoArtistaSeleccionado.Text = "----";
         }
-
-
     }
 }

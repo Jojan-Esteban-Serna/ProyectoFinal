@@ -1,16 +1,13 @@
 ﻿using ProyectoFinal.datos;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProyectoFinal.logica
 {
-    class AsociacionArtistas
+    internal class AsociacionArtistas
     {
-        AccesoDatos dt = new AccesoDatos();
+        private AccesoDatos dt = new AccesoDatos();
+
         public int registrarAsociacionArtistas(int asoArtNit, string asoArtNombre, string asoArtModalidad)
         {
             int resultado;
@@ -22,6 +19,7 @@ namespace ProyectoFinal.logica
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+
         public DataSet consultarAsociacionesArtistas()
         {
             DataSet mids = new DataSet();
