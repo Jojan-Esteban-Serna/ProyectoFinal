@@ -44,7 +44,7 @@ namespace ProyectoFinal.logica
                          ON Vincula.artCodigo = Artista.artCodigo
                          INNER JOIN AsociacionArtistas
                          ON Vincula.asoArtNit = AsociacionArtistas.asoArtNit
-                         WHERE vinFechaInicio like to_date('{0}','dd/mm/yyyy')", vinFechaInicio);
+                         WHERE vinFechaInicio like to_date('{0}','dd/MM/yyyy')", vinFechaInicio);
             //envio la consulta al metodo ejecutarSELECT en la capa de datos
             mids = dt.ejecutarSELECT(consulta);
             return mids;

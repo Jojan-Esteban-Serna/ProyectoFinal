@@ -360,7 +360,7 @@ namespace ProyectoFinal
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(96, 20);
             this.dtpFechaFin.TabIndex = 11;
-            this.dtpFechaFin.Value = new System.DateTime(2022, 7, 31, 14, 53, 25, 0);
+            this.dtpFechaFin.Value = new System.DateTime(2022, 8, 1, 0, 13, 41, 0);
             // 
             // dtpFechaInicio
             // 
